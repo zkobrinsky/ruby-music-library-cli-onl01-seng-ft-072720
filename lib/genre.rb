@@ -33,6 +33,7 @@ class Genre
     unless song.genre != nil
       song.genre = self
       @songs << song
+      binding.pry
     end
   end
 
