@@ -1,3 +1,6 @@
+require_relative './song'
+require_relative './artist'
+
 class Genre
 
   attr_accessor :name
@@ -27,6 +30,11 @@ class Genre
 
   def songs
     @songs
+  end
+
+  def artists
+    genres = Song.all.select{|s| s.genre}
+    genres.collect{|a| a.artist}.uniq
   end
 
 
