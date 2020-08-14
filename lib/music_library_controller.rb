@@ -2,14 +2,14 @@ class MusicLibraryController
 
   attr_accessor :path
   @input = ""
+  @library = ""
 
   def initialize(path = './db/mp3s')
     @path = path
-    MusicImporter.new(@path).import
+    @library = MusicImporter.new(@path).import
   end
 
   def call
-
     until @input == "exit"
       puts "Welcome to your music library!"
       puts "To list all of your songs, enter 'list songs'."
@@ -23,5 +23,11 @@ class MusicLibraryController
       @input = gets.chomp
     end
   end
+
+  def list_songs
+
+  end
+
+
 
 end
