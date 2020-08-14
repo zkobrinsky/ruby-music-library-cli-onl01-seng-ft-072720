@@ -23,7 +23,7 @@ class Genre
   end
 
   def self.create(name)
-    inst = self.new(name).tap {|inst| inst.save}
+    new(name).tap {|g| g.save}
   end
 
   def songs
@@ -31,8 +31,7 @@ class Genre
   end
 
   def artists
-    genres = Song.all.select{|s| s.genre}
-    genres.collect{|a| a.artist}.uniq
+    songs.collect{|s| s.artist}.uniq
   end
 
 

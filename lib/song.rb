@@ -10,7 +10,7 @@ class Song
     @name = name
     self.artist = artist if artist
     self.genre = genre if genre
-    save
+    # save
   end
 
   def save
@@ -26,8 +26,8 @@ class Song
   end
 
   def self.create(name)
-    self.new(name)
-    # inst = self.new(name).tap {|inst| inst.save}
+    # self.new(name)
+    inst = self.new(name).tap {|inst| inst.save}
   end
 
   def artist=(artist)
@@ -47,14 +47,15 @@ class Song
 
     artist = Artist.find_or_create_by_name(artist)
     genre = Genre.find_or_create_by_name(genre)
-    song = self.new(name, artist, genre)
+    new(name, artist, genre)
+    # binding.pry
   end
 
   def self.create_from_filename(filename)
-    song = self.new_from_filename(filename)
-    unless Song.all.include?(song)
+    song = new_from_filename(filename)
+    # unless Song.all.include?(song)
       song.save
-    end
+    # end
   end
 
 

@@ -31,9 +31,25 @@ class MusicLibraryController
   end
 
   def list_artists
-    artists_to_parse = []
-    artists = Artist.all.sort_by{|s| s.name}
-    artists.each.with_index(1){|s, i| puts "#{i}. #{s.name}"}
+    artists = Artist.all.sort_by{|a| a.name}
+    artists.each.with_index(1){|a, i| puts "#{i}. #{a.name}"}
+  end
+
+  def list_genres
+    genre = Genre.all.sort_by{|g| g.name}
+    genre.each.with_index(1){|g, i| puts "#{i}. #{g.name}"}
+  end
+
+  def list_songs_by_artist
+    # binding.pry
+    puts "Please enter the name of an artist:"
+    input = gets.chomp
+
+
+
+    # artist_songs = Song.all.select{|s| s.artist.name == input}
+    #
+  end
   end
 
 
