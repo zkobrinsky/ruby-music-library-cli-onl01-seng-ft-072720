@@ -29,12 +29,5 @@ class Genre
     @songs
   end
 
-  def add_song(song)
-    unless song.genre != nil
-      song.genre = self
-      @songs << song
-      binding.pry
-    end
-  end
 
 end
