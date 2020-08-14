@@ -1,6 +1,3 @@
-require_relative './song'
-require_relative './genre'
-
 class Artist
 
   attr_accessor :name

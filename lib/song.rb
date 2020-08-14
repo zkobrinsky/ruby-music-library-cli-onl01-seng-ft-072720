@@ -1,5 +1,3 @@
-require_relative './artist'
-require_relative './genre'
 
 class Song
 
@@ -28,12 +26,8 @@ class Song
   end
 
   def self.create(name)
-    self_songs = self.all.select{|s| s.name == self}
-    # if !self_songs.include?(name)
-    inst = self.new(name).tap {|inst| inst.save}
-  # else
-  #   puts "That song is already in your collection"
-    # end
+    self.new(name)
+    # inst = self.new(name).tap {|inst| inst.save}
   end
 
   def artist=(artist)
@@ -44,6 +38,19 @@ class Song
   def genre=(genre)
     @genre = genre
     genre.songs << self unless genre.songs.include? self
+  end
+
+  def self.find_by_name(song_name)
+    self.all.detect{|s| s.name == song_name}
+  end
+
+  def self.find_or_create_by_name(song_name)
+    # binding.pry
+    if self.find_by_name(song_name)
+      self.find_by_name(song_name)
+    else
+      self.create(song_name)
+    end
   end
 
 end
