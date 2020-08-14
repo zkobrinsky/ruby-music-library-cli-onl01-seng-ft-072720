@@ -6,6 +6,7 @@ class MusicLibraryController
 
   def initialize(path = './db/mp3s')
     @path = path
+    # binding.pry
     @library = MusicImporter.new(@path).import
   end
 
@@ -25,7 +26,14 @@ class MusicLibraryController
   end
 
   def list_songs
+    songs = Song.all.sort_by{|s| s.name}
+    songs.each.with_index(1){|s, i| puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"}
+  end
 
+  def list_artists
+    artists_to_parse = []
+    artists = Artist.all.sort_by{|s| s.name}
+    artists.each.with_index(1){|s, i| puts "#{i}. #{s.name}"}
   end
 
 

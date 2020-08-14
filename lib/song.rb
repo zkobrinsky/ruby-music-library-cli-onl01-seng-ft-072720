@@ -52,7 +52,9 @@ class Song
 
   def self.create_from_filename(filename)
     song = self.new_from_filename(filename)
-    song.save
+    unless Song.all.include?(song)
+      song.save
+    end
   end
 
 
