@@ -1,3 +1,6 @@
+require_relative './artist'
+require_relative './genre'
+
 class Song
 
   attr_accessor :name
@@ -9,6 +12,7 @@ class Song
     @name = name
     self.artist = artist if artist
     self.genre = genre if genre
+    save
   end
 
   def save
@@ -24,7 +28,12 @@ class Song
   end
 
   def self.create(name)
+    self_songs = self.all.select{|s| s.name == self}
+    # if !self_songs.include?(name)
     inst = self.new(name).tap {|inst| inst.save}
+  # else
+  #   puts "That song is already in your collection"
+    # end
   end
 
   def artist=(artist)
