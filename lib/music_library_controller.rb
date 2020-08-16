@@ -63,7 +63,8 @@ class MusicLibraryController
     input = gets.chomp.to_i
     songs = Song.all.sort_by{|s| s.name}
 
-    unless songs[input-1] == nil
+    unless input <= songs.length
+    # unless songs[input-1] == nil
       puts "Playing #{songs[input-1].name} by #{songs[input-1].artist.name}"
     end
 
