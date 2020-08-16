@@ -47,7 +47,7 @@ class MusicLibraryController
 
 
 
-    # artist = Artist.all.detect{|a| a  == input}
+    artist = Artist.all.detect{|a| a  == input}
     #
   # end
   end
