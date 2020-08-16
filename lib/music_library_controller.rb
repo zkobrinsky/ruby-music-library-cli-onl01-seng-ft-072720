@@ -47,7 +47,7 @@ class MusicLibraryController
 
 
 
-    # artist_songs = Song.all.select{|s| s.artist.name == input}
+    # artist_songs = Artist.all.select{|a| a.songs  == input}
     #
   # end
   end
