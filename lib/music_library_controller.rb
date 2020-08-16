@@ -1,7 +1,7 @@
 class MusicLibraryController
 
   attr_accessor :path
-  
+
   @library = ""
 
   def initialize(path = './db/mp3s')
