@@ -63,7 +63,7 @@ class MusicLibraryController
     input = gets.to_i.chomp
 
     songs = Song.all.sort_by{|s| s.name}
-    binding.pry
+    # binding.pry
     puts "Playing #{songs[i-1].name} by #{songs[i-1].artist.name}"
     # list_songs
     # expected: 1 time with arguments: ("Playing Larry Csonka by Action Bronson")
