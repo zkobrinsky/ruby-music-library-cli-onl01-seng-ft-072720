@@ -50,6 +50,8 @@ class MusicLibraryController
     if artist = Artist.all.detect{|a| a.name  == input}
       artist_songs = artist.select{|a| a.songs.name}
       binding.pry
+    else
+      puts "Artist not found."
     end
       # binding.pry
     #
