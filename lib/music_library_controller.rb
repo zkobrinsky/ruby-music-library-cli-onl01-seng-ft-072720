@@ -49,7 +49,7 @@ class MusicLibraryController
 
     # artist_songs = Song.all.select{|s| s.artist.name == input}
     #
-  end
+  # end
   end
 
 
