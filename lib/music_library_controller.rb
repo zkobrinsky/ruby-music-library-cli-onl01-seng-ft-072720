@@ -54,8 +54,7 @@ class MusicLibraryController
     input = gets.chomp
 
     if genre = Genre.find_by_name(input)
-      genre.songs.sort_by{|g| g.name
-      binding.pry}.each.with_index(1){|s, i| puts "#{i}. #{s.name} - #{s.artist.name}"}
+      genre.songs.sort_by{|s| s.name}.each.with_index(1){|s, i| puts "#{i}. #{s.artist.name} - #{s..name}"}
     end
   end
 
