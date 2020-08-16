@@ -60,12 +60,13 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
-    input = gets.chomp
+    input = gets.to_i.chomp
 
     songs = Song.all.sort_by{|s| s.name}
     binding.pry
-    # puts
+    puts "Playing #{songs[]}"
     # list_songs
+    # expected: 1 time with arguments: ("Playing Larry Csonka by Action Bronson")
 
   end
 
