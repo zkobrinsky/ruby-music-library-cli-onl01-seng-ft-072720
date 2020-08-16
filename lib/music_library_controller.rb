@@ -51,7 +51,7 @@ class MusicLibraryController
       artist.collect{|a| a.songs.name}
       binding.pry
     #
-  # end
+  end
   end
 
 
