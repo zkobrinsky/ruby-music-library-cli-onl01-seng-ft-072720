@@ -49,6 +49,7 @@ class MusicLibraryController
     # binding.pry
     if artist = Artist.all.detect{|a| a.name  == input}
       artist_songs = artist.select{|a| a.songs.name}
+      binding.pry
     end
       # binding.pry
     #
