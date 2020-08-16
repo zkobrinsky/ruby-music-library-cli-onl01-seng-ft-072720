@@ -49,7 +49,7 @@ class MusicLibraryController
     # binding.pry
     if artist = Artist.find_by_name(input)
       artist.songs.sort_by{|s| s.name}.each.with_index(1){|s, i| puts "#{i}. #{s.name}"}
-      binding.pry
+      # binding.pry
     end
 
   end
