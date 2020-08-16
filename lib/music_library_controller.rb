@@ -61,12 +61,11 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     input = gets.chomp.to_i
-
     songs = Song.all.sort_by{|s| s.name}
-    # binding.pry
+
+    unless songs[input-1] == nil
     puts "Playing #{songs[input-1].name} by #{songs[input-1].artist.name}"
-    # list_songs
-    # expected: 1 time with arguments: ("Playing Larry Csonka by Action Bronson")
+
 
   end
 
