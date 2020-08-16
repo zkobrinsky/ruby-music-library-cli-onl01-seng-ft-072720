@@ -49,7 +49,7 @@ class MusicLibraryController
     # binding.pry
     artist = Artist.all.detect{|a| a.name  == input}
       # artist.collect{|a| a.songs.name binding.pry}
-      # binding.pry
+      binding.pry
     #
   # end
   end
